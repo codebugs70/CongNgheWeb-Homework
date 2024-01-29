@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>TRAVEL</title>
+    <link
+      rel="icon"
+      href="https://img.freepik.com/free-vector/detailed-travel-logo_23-2148616611.jpg?size=338&ext=jpg&ga=GA1.1.1448711260.1706400000&semt=ais"
+      type="image/x-icon"
+    />
+    <script
+      src="https://kit.fontawesome.com/5f219ec053.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+  </head>
+  <style>
+    body {
+      scroll-behavior: smooth;
+    }
+    .card {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .card:hover {
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transform: translateY(-5px);
+      background-color: #eee;
+    }
+    .navbar-scrolled {
+      background-image: url("https://images.unsplash.com/photo-1553570739-330b8db8a925?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+      background-size: cover;
+      background-position: center;
+      transition: 0.3s ease-in-out;
+    }
+    .sticky {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      transition: top 0.3s;
+    }
+  </style>
+  <body>
+    <!-- NAVBAR -->
+    <nav id="navbar" class="navbar navbar-expand-lg">
+      <div class="container-fluid">
+        <!-- Navbar brand -->
+        <a class="navbar-brand text-light" href="#">TRAVEL</a>
+
+        <!-- Toggle button for mobile -->
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Navbar links -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link text-light" href="#">Trang chủ</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-light" href="#tourincountry"
+                >Tour trong nước</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-light" href="#foreigntour"
+                >Tour nước ngoài</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-light" href="#service">Dịch vụ</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-light" href="#contact">Liên hệ</a>
+            </li>
+          </ul>
+
+          <!-- SOCIAL MEDIA ICONS -->
+          <div class="d-flex" style="gap: 15px">
+            <a href="#" class="text-white"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="text-white"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="text-white"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- BANNER IMAGE -->
+    <div style="position: relative; height: 100vh">
+      <img
+        style="height: 100%; width: 100%; object-fit: cover"
+        src="https://images.unsplash.com/photo-1553570739-330b8db8a925?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        alt=""
+      />
+
+      <div
+        style="
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          text-align: center;
+          color: white;
+          background-color: rgba(0, 0, 0, 0.4);
+          border-radius: 12px;
+          padding: 30px;
+        "
+      >
+        <h1 style="font-family: Georgia, 'Times New Roman', Times, serif">
+          XÁCH BALO LÊN VÀ ĐI
+        </h1>
+        <button
+          class="btn btn-primary"
+          type="button"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#loginOffcanvas"
+          aria-controls="loginOffcanvas"
+        >
+          Đăng nhập
+        </button>
+      </div>
+    </div>
+
+    <!-- MAIN -->
+    <main>
+      <!-- TOUR IN COUNTRY -->
+      <div id="tourincountry" class="container mt-5">
+        <h1>Tour trong nước</h1>
+
+        <div class="row row-cols-1 row-cols-md-3 g-4 mt-3">
+          <!-- Tour Card 1 -->
+          <div class="col">
+            <div class="card">
+              <img
+                src="https://images.unsplash.com/photo-1583417319070-4a69db38a482?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                class="card-img-top"
+                alt="Tour Image"
+                style="height: 500px; object-fit: cover"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Tour Title 1</h5>
+                <p class="card-text">
+                  Some quick example text to build on the card title and make up
+                  the bulk of the card's content.
+                </p>
+                <button
+                  type="button"
+                  class="btn btn-primary"
+                  data-bs-toggle="modal"
+                  data-bs-target="#bookingModal"
+                >
+                  Book Now
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tour Card 2 -->
+          <div class="col">
+            <div class="card">
+              <img
+                src="https://images.unsplash.com/photo-1504214208698-ea1916a2195a?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                class="card-img-top"
+                style="height: 500px; object-fit: cover"
+                alt="Tour Image"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Tour Title 2</h5>
+                <p class="card-text">
+                  Some quick example text to build on the card title and make up
+                  the bulk of the card's content.
+                </p>
+                <button
+                  type="button"
+                  class="btn btn-primary"
+                  data-bs-toggle="modal"
+                  data-bs-target="#bookingModal"
+                >
+                  Book Now
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tour Card 3 -->
+          <div class="col">
+            <div class="card">
+              <img
+                src="https://plus.unsplash.com/premium_photo-1691960159059-04976913256a?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                class="card-img-top"
+                style="height: 500px; object-fit: cover"
+                alt="Tour Image"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Tour Title 3</h5>
+                <p class="card-text">
+                  Some quick example text to build on the card title and make up
+                  the bulk of the card's content.
+                </p>
+                <button
+                  type="button"
+                  class="btn btn-primary"
+                  data-bs-toggle="modal"
+                  data-bs-target="#bookingModal"
+                >
+                  Book Now
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- FOREIGN TOUR -->
+      <div id="foreigntour" class="container mt-5">
+        <h1>Tour nước ngoài</h1>
+        <div class="row row-cols-1 row-cols-md-3 g-4 mt-3">
+          <!-- Tour Card 1 -->
+          <div class="col">
+            <div class="card h-100">
+              <img
+                src="https://images.unsplash.com/photo-1610312278520-bcc893a3ff1d?q=80&w=2047&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                class="card-img-top"
+                style="height: 300px; object-fit: cover"
+                alt="Tour Image"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Tour Title 1</h5>
+                <p class="card-text">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Vestibulum id justo sed leo iaculis aliquam.
+                </p>
+              </div>
+              <div class="card-footer">
+                <a href="#" class="btn btn-primary">View Details</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tour Card 2 -->
+          <div class="col">
+            <div class="card h-100">
+              <img
+                src="https://images.unsplash.com/photo-1525625293386-3f8f99389edd?q=80&w=1952&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                class="card-img-top"
+                alt="Tour Image"
+                style="height: 300px; object-fit: cover"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Tour Title 2</h5>
+                <p class="card-text">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Vestibulum id justo sed leo iaculis aliquam.
+                </p>
+              </div>
+              <div class="card-footer">
+                <a href="#" class="btn btn-primary">View Details</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tour Card 3 -->
+          <div class="col">
+            <div class="card h-100">
+              <img
+                src="https://images.unsplash.com/photo-1503614472-8c93d56e92ce?q=80&w=2011&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                class="card-img-top"
+                alt="Tour Image"
+                style="height: 300px; object-fit: cover"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Tour Title 3</h5>
+                <p class="card-text">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Vestibulum id justo sed leo iaculis aliquam.
+                </p>
+              </div>
+              <div class="card-footer">
+                <a href="#" class="btn btn-primary">View Details</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SERVICE -->
+      <section id="service" class="container-md py-5">
+        <!-- TITLE -->
+        <div class="text-center">
+          <h1 style="text-transform: capitalizel; font-weight: bold">
+            Các tính năng tốt nhất
+          </h1>
+          <p style="max-width: 600px; margin-left: auto; margin-right: auto">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi
+            aperiam minus fuga consequatur quas nesciunt molestias totam quis
+          </p>
+        </div>
+
+        <div class="row justify-content-center mt-5">
+          <!-- Service Card 1 -->
+          <div class="col-md-4">
+            <div class="card text-center">
+              <div class="card-body">
+                <i class="fas fa-cogs fa-4x mb-3"></i>
+                <h5 class="card-title">Service 1</h5>
+                <p class="card-text">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Libero incidunt non laboriosam quam sunt ducimus nam. In autem
+                  debitis animi eveniet obcaecati eius earum sit ex perferendis
+                  fuga. Excepturi, magnam.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Service Card 2 -->
+          <div class="col-md-4">
+            <div class="card text-center">
+              <div class="card-body">
+                <i class="fas fa-tools fa-4x mb-3"></i>
+                <h5 class="card-title">Service 2</h5>
+                <p class="card-text">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Libero incidunt non laboriosam quam sunt ducimus nam. In autem
+                  debitis animi eveniet obcaecati eius earum sit ex perferendis
+                  fuga. Excepturi, magnam.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Service Card 3 -->
+          <div class="col-md-4">
+            <div class="card text-center">
+              <div class="card-body">
+                <i class="fas fa-wrench fa-4x mb-3"></i>
+                <h5 class="card-title">Service 3</h5>
+                <p class="card-text">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Libero incidunt non laboriosam quam sunt ducimus nam. In autem
+                  debitis animi eveniet obcaecati eius earum sit ex perferendis
+                  fuga. Excepturi, magnam.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+      <section id="contact" class="container py-5">
+        <div class="row">
+          <!-- Contact Form -->
+          <div class="col-md-6">
+            <h2>Contact Us</h2>
+            <form>
+              <div class="mb-3">
+                <label for="name" class="form-label">Your Name</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="name"
+                  placeholder="Enter your name"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="email" class="form-label">Your Email</label>
+                <input
+                  type="email"
+                  class="form-control"
+                  id="email"
+                  placeholder="Enter your email"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="message" class="form-label">Message</label>
+                <textarea
+                  class="form-control"
+                  id="message"
+                  rows="5"
+                  placeholder="Enter your message"
+                ></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+          </div>
+
+          <!-- Embedded Map -->
+          <div class="col-md-6">
+            <h2>Our Location</h2>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3223.6046697604856!2d-122.08156008509714!3d37.389423079834526!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fba7159a4444b%3A0xf0f0e01fc03c5b2d!2sGolden%20Gate%20Bridge!5e0!3m2!1sen!2sus!4v1643454390316!5m2!1sen!2sus"
+              width="100%"
+              height="400"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+            ></iframe>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-dark text-light py-4">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <h5>Contact Us</h5>
+            <p>Email: example@example.com</p>
+            <p>Phone: +1234567890</p>
+          </div>
+          <div class="col-md-6">
+            <h5>Follow Us</h5>
+            <ul class="list-inline">
+              <li class="list-inline-item">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+              </li>
+              <li class="list-inline-item">
+                <a href="#"><i class="fab fa-twitter"></i></a>
+              </li>
+              <li class="list-inline-item">
+                <a href="#"><i class="fab fa-instagram"></i></a>
+              </li>
+              <li class="list-inline-item">
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <hr class="mt-4" />
+        <p class="text-center">
+          &copy; 2024 Your Company. All rights reserved.
+        </p>
+      </div>
+    </footer>
+
+    <!-- OFF CANVAS -->
+    <div
+      class="offcanvas offcanvas-start"
+      tabindex="-1"
+      id="loginOffcanvas"
+      aria-labelledby="loginOffcanvasLabel"
+    >
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="loginOffcanvasLabel">Login</h5>
+        <button
+          type="button"
+          class="btn-close text-reset"
+          data-bs-dismiss="offcanvas"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="offcanvas-body">
+        <form>
+          <div class="mb-3">
+            <label for="username" class="form-label">Username</label>
+            <input
+              type="text"
+              class="form-control"
+              id="username"
+              placeholder="Enter your username"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="password" class="form-label">Password</label>
+            <input
+              type="password"
+              class="form-control"
+              id="password"
+              placeholder="Enter your password"
+            />
+          </div>
+          <button type="submit" class="btn btn-primary">Login</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- BOOKING FORM MODAL -->
+    <div
+      class="modal fade"
+      id="bookingModal"
+      tabindex="-1"
+      aria-labelledby="bookingModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="bookingModalLabel">Booking Form</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="mb-3">
+                <label for="name" class="form-label">Name</label>
+                <input type="text" class="form-control" id="name" required />
+              </div>
+              <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email" required />
+              </div>
+              <div class="mb-3">
+                <label for="phone" class="form-label">Phone</label>
+                <input type="tel" class="form-control" id="phone" required />
+              </div>
+              <div class="mb-3">
+                <label for="date" class="form-label">Date</label>
+                <input type="date" class="form-control" id="date" required />
+              </div>
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CUSTOM JS -->
+    <script>
+      const navbar = document.getElementById("navbar");
+      const sticky = navbar.offsetTop;
+
+      window.addEventListener("scroll", function () {
+        if (window.scrollY > 200) {
+          navbar.classList.add("navbar-scrolled");
+        } else {
+          navbar.classList.remove("navbar-scrolled");
+        }
+      });
+
+      function stickyNavbar() {
+        if (window.pageYOffset >= sticky) {
+          navbar.classList.add("sticky");
+        } else {
+          navbar.classList.remove("sticky");
+        }
+      }
+
+      window.onscroll = function () {
+        stickyNavbar();
+      };
+    </script>
+
+    <!-- LINK JS -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+      integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

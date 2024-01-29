@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>LIVE DINNER</title>
+    <link
+      rel="icon"
+      href="https://www.shutterstock.com/image-vector/dinner-logo-fork-spoon-restaurant-600nw-1704910507.jpg"
+      type="image/x-icon"
+    />
+    <script
+      src="https://kit.fontawesome.com/5f219ec053.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+  </head>
+
+  <style>
+    body {
+      scroll-behavior: smooth;
+    }
+    .card {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .card:hover {
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transform: translateY(-5px);
+      background-color: #eee;
+    }
+    .navbar-nav .nav-link:hover {
+      color: #fff;
+      background-color: rgba(255, 255, 255, 0.1);
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+    .sticky {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      transition: top 0.3s;
+    }
+    .category-item {
+      cursor: default;
+      text-transform: capitalize;
+    }
+    .selected {
+      color: #ff6651;
+      font-weight: bold;
+    }
+    .gallery-item {
+      border-radius: 10px;
+      overflow: hidden;
+      transition: transform 0.3s ease;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .gallery-item:hover {
+      transform: scale(1.05);
+    }
+    .footer {
+      background-color: #f8f9fa;
+      padding: 50px 0;
+    }
+
+    .footer p {
+      margin-bottom: 0;
+    }
+
+    .footer-links {
+      list-style: none;
+      padding: 0;
+    }
+
+    .footer-links li {
+      margin-bottom: 10px;
+    }
+
+    .footer-links a {
+      text-decoration: none;
+      color: #333;
+    }
+
+    .footer-social-icons a {
+      margin-right: 10px;
+      color: #333;
+    }
+  </style>
+
+  <body>
+    <!-- NAVBAR -->
+    <nav
+      id="navbar"
+      class="navbar navbar-expand-lg"
+      style="background-color: #ff6651"
+    >
+      <div class="container-fluid">
+        <!-- Navbar brand (logo) -->
+        <div class="d-flex align-items-center" style="gap: 10px">
+          <img
+            src="https://www.shutterstock.com/image-vector/dinner-logo-fork-spoon-restaurant-600nw-1704910507.jpg"
+            alt=""
+            style="
+              width: 50px;
+              height: 50px;
+              object-fit: cover;
+              border-radius: 100rem;
+            "
+          />
+          <a class="navbar-brand text-light" style="font-weight: bold" href="#"
+            >LIVE DINNER</a
+          >
+        </div>
+
+        <!-- Toggle button for mobile -->
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Navbar links -->
+        <div
+          class="collapse navbar-collapse justify-content-center"
+          id="navbarNav"
+        >
+          <ul class="navbar-nav" style="gap: 20px">
+            <li class="nav-item">
+              <a class="nav-link text-light fs-5" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-light fs-5" href="#menu">Menu</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-light fs-5" href="#about">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-light fs-5" href="#gallery">Gallery</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-light fs-5" href="#blog">Blog</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-light fs-5" href="#contact">Contact</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- SOCIAL MEDIA ICONS -->
+        <div class="d-flex" style="gap: 15px">
+          <a href="#" class="text-white"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="text-white"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="text-white"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- BANNER IMAGE -->
+    <div
+      style="
+        position: relative;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+      "
+    >
+      <!-- BANNER IMAGE -->
+      <div
+        style="
+          position: relative;
+          height: 100vh;
+          display: flex;
+          width: 100%;
+          align-items: center;
+          background-image: linear-gradient(
+              rgba(0, 0, 0, 0.8),
+              rgba(0, 0, 0, 0.5)
+            ),
+            url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+          background-size: cover;
+          background-position: center;
+        "
+      >
+        <div
+          style="
+            position: relative;
+            z-index: 1;
+            padding: 30px;
+            color: white;
+            margin-left: 150px;
+          "
+        >
+          <h1 style="font-size: 3rem">Discover Delicious Cuisine</h1>
+          <p style="font-size: 18px; max-width: 700px">
+            Explore a world of culinary delights with our mouthwatering dishes.
+            From savory starters to decadent desserts, we have something for
+            every palate. Lorem ipsum dolor sit amet consectetur adipisicing
+            elit. Ducimus modi aut rerum alias quas cumque fuga aliquid sunt,
+            ullam facere dolore odit quis eum quos eligendi incidunt
+            praesentium, suscipit et?
+          </p>
+          <button
+            class="btn btn-lg text-light"
+            style="background-color: #ff6651; font-weight: bold"
+            type="button"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#reservationOffcanvas"
+            aria-controls="reservationOffcanvas"
+          >
+            Make a Reservation
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- MAIN -->
+    <main>
+      <!-- ABOUT SECTION -->
+      <section id="about" class="py-5">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-6">
+              <h2 class="display-4 mb-4">About Us</h2>
+              <p class="lead">
+                Welcome to
+                <span style="color: #ff6651; font-weight: bold"
+                  >LIVE DINNER</span
+                >, where passion for food meets the art of hospitality. We are
+                dedicated to serving you the finest culinary creations crafted
+                with love and care.
+              </p>
+              <p>
+                Our journey began [year] with a vision to create a dining
+                experience like no other. From sourcing the freshest ingredients
+                to delivering exceptional service, every detail is meticulously
+                curated to ensure your satisfaction.
+              </p>
+              <p>
+                Whether you're craving classic comfort food or adventurous
+                flavors, our diverse menu has something for everyone. Join us
+                for a memorable dining experience that tantalizes your taste
+                buds and warms your heart.
+              </p>
+            </div>
+            <div class="col-lg-6">
+              <img
+                src="https://images.unsplash.com/photo-1552566626-52f8b828add9?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                class="img-fluid rounded"
+                alt="About Us"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- QUOTE SECTION -->
+      <section
+        id="quote"
+        class="py-5 text-white"
+        style="
+          background-image: url(https://images.unsplash.com/photo-1424847651672-bf20a4b0982b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+          background-size: cover;
+          background-repeat: no-repeat;
+        "
+      >
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 offset-lg-2 text-center">
+              <blockquote class="blockquote">
+                <p class="mb-0">
+                  "Good food is all the sweeter when shared with good friends."
+                </p>
+                <footer class="mt-3">Anonymous</footer>
+              </blockquote>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- MENU SECTION -->
+      <section id="menu" class="mt-5">
+        <div class="text-center">
+          <h1>OUR SPECIAL MENU</h1>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia
+          </p>
+        </div>
+
+        <section id="food" class="py-5">
+          <div class="container">
+            <div class="row">
+              <!-- Food Categories -->
+              <div class="col-lg-3">
+                <ul class="list-group">
+                  <li class="list-group-item category-item">all</li>
+                  <li class="list-group-item category-item">pizza</li>
+                  <li class="list-group-item category-item">burger</li>
+                  <li class="list-group-item category-item">sushi</li>
+                </ul>
+              </div>
+
+              <!-- Food Images Grid -->
+              <div class="col-lg-9">
+                <div class="row menu-list"></div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </section>
+
+      <!-- GALLERY SECTION -->
+      <div id="gallery" class="container mt-5">
+        <div class="text-center">
+          <h1>OUR GALLERY</h1>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia
+          </p>
+        </div>
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+          <!-- Gallery Items -->
+          <div class="col">
+            <div class="gallery-item">
+              <img
+                src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?q=80&w=1780&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="Image 1"
+                style="height: 300px; object-fit: cover"
+              />
+            </div>
+          </div>
+          <div class="col">
+            <div class="gallery-item">
+              <img
+                src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="Image 2"
+                style="height: 300px; object-fit: cover"
+              />
+            </div>
+          </div>
+          <div class="col">
+            <div class="gallery-item">
+              <img
+                src="https://plus.unsplash.com/premium_photo-1663852297267-827c73e7529e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="Image 3"
+                style="height: 300px; object-fit: cover"
+              />
+            </div>
+          </div>
+          <div class="col">
+            <div class="gallery-item">
+              <img
+                src="https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?q=80&w=1980&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="Image 3"
+                style="height: 300px; object-fit: cover"
+              />
+            </div>
+          </div>
+          <div class="col">
+            <div class="gallery-item">
+              <img
+                src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="Image 3"
+                style="height: 300px; object-fit: cover"
+              />
+            </div>
+          </div>
+          <div class="col">
+            <div class="gallery-item">
+              <img
+                src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?q=80&w=1981&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="Image 3"
+                style="height: 300px; object-fit: cover"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- BLOG SECTION -->
+      <div id="blog" class="container mt-5">
+        <h2 class="text-center mb-4">Latest Blog Posts</h2>
+        <div class="row">
+          <!-- Blog Post 1 -->
+          <div class="col-md-4 mb-4">
+            <div class="card">
+              <img
+                src="https://images.unsplash.com/photo-1551218808-94e220e084d2?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                style="height: 400px; object-fit: cover"
+                class="card-img-top"
+                alt="..."
+              />
+              <div class="card-body">
+                <h5 class="card-title">Blog Post 1</h5>
+                <p class="card-text">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                </p>
+                <a href="#" class="btn btn-primary">Read More</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Blog Post 2 -->
+          <div class="col-md-4 mb-4">
+            <div class="card">
+              <img
+                src="https://images.unsplash.com/photo-1556911261-6bd341186b2f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                style="height: 400px; object-fit: cover"
+                class="card-img-top"
+                alt="..."
+              />
+              <div class="card-body">
+                <h5 class="card-title">Blog Post 2</h5>
+                <p class="card-text">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                </p>
+                <a href="#" class="btn btn-primary">Read More</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Blog Post 3 -->
+          <div class="col-md-4 mb-4">
+            <div class="card">
+              <img
+                src="https://images.unsplash.com/photo-1506368249639-73a05d6f6488?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                style="height: 400px; object-fit: cover"
+                class="card-img-top"
+                alt="..."
+              />
+              <div class="card-body">
+                <h5 class="card-title">Blog Post 3</h5>
+                <p class="card-text">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                </p>
+                <a href="#" class="btn btn-primary">Read More</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CONTACT -->
+      <section id="contact" class="container my-5">
+        <div class="row">
+          <!-- Contact Form -->
+          <div class="col-md-6">
+            <h2>Contact Us</h2>
+            <form>
+              <div class="mb-3">
+                <label for="name" class="form-label">Your Name</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="name"
+                  placeholder="Enter your name"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="email" class="form-label">Your Email</label>
+                <input
+                  type="email"
+                  class="form-control"
+                  id="email"
+                  placeholder="Enter your email"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="message" class="form-label">Message</label>
+                <textarea
+                  class="form-control"
+                  id="message"
+                  rows="5"
+                  placeholder="Enter your message"
+                ></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+          </div>
+
+          <!-- Embedded Map -->
+          <div class="col-md-6">
+            <h2>Our Location</h2>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3223.6046697604856!2d-122.08156008509714!3d37.389423079834526!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fba7159a4444b%3A0xf0f0e01fc03c5b2d!2sGolden%20Gate%20Bridge!5e0!3m2!1sen!2sus!4v1643454390316!5m2!1sen!2sus"
+              width="100%"
+              height="400"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+            ></iframe>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer bg-body-secondary">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <h5>About Us</h5>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean
+              euismod bibendum laoreet.
+            </p>
+          </div>
+          <div class="col-md-4">
+            <h5>Quick Links</h5>
+            <ul class="footer-links">
+              <li><a href="#">Home</a></li>
+              <li><a href="#">Menu</a></li>
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+          </div>
+          <div class="col-md-4">
+            <h5>Connect with Us</h5>
+            <ul class="list-inline footer-social-icons">
+              <li class="list-inline-item">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+              </li>
+              <li class="list-inline-item">
+                <a href="#"><i class="fab fa-twitter"></i></a>
+              </li>
+              <li class="list-inline-item">
+                <a href="#"><i class="fab fa-instagram"></i></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <hr />
+        <div class="text-center">
+          <p>&copy; 2024 Your Restaurant Name. All rights reserved.</p>
+          <p>Designed with ❤️ by NMT</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="orderFoodModal"
+      tabindex="-1"
+      aria-labelledby="orderFoodModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="orderFoodModalLabel">
+              Order Food Form
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <!-- Order Form -->
+            <form>
+              <div class="mb-3">
+                <label for="foodName" class="form-label">Food Name</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="foodName"
+                  placeholder="Enter food name"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="quantity" class="form-label">Quantity</label>
+                <input
+                  type="number"
+                  class="form-control"
+                  id="quantity"
+                  min="1"
+                  value="1"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="address" class="form-label">Delivery Address</label>
+                <textarea
+                  class="form-control"
+                  id="address"
+                  rows="3"
+                  placeholder="Enter delivery address"
+                ></textarea>
+              </div>
+              <div class="mb-3">
+                <label for="contact" class="form-label">Contact Number</label>
+                <input
+                  type="tel"
+                  class="form-control"
+                  id="contact"
+                  placeholder="Enter contact number"
+                />
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+            <button type="submit" class="btn btn-primary">Place Order</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Reservation Offcanvas -->
+    <div
+      class="offcanvas offcanvas-end"
+      tabindex="-1"
+      id="reservationOffcanvas"
+      aria-labelledby="reservationOffcanvasLabel"
+    >
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="reservationOffcanvasLabel">
+          Reservation Form
+        </h5>
+        <button
+          type="button"
+          class="btn-close text-reset"
+          data-bs-dismiss="offcanvas"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="offcanvas-body">
+        <!-- Reservation Form -->
+        <form>
+          <div class="mb-3">
+            <label for="name" class="form-label">Your Name</label>
+            <input
+              type="text"
+              class="form-control"
+              id="name"
+              placeholder="Enter your name"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="email" class="form-label">Email address</label>
+            <input
+              type="email"
+              class="form-control"
+              id="email"
+              placeholder="name@example.com"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="date" class="form-label">Reservation Date</label>
+            <input type="date" class="form-control" id="date" />
+          </div>
+          <div class="mb-3">
+            <label for="time" class="form-label">Reservation Time</label>
+            <input type="time" class="form-control" id="time" />
+          </div>
+          <div class="mb-3">
+            <label for="guests" class="form-label">Number of Guests</label>
+            <input
+              type="number"
+              class="form-control"
+              id="guests"
+              min="1"
+              value="1"
+            />
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- CUSTOM JS -->
+    <script>
+      const foodItems = [
+        {
+          name: "Margherita Pizza",
+          description:
+            "Delicious pizza with various toppings. Lorem ipsum dolor sit,  ",
+          imageUrl:
+            "https://vcdn-dulich.vnecdn.net/2018/05/22/pizza2-4648-1526893452-6893-1526984399.jpg",
+          category: "pizza",
+        },
+        {
+          name: "Maki Sushi",
+          description: "Fresh and tasty sushi rolls with wasabi and soy sauce.",
+          imageUrl:
+            "https://images.immediate.co.uk/production/volatile/sites/2/2022/05/Maki-sushi-rolls-3059293.jpg?resize=768,574",
+          category: "sushi",
+        },
+        {
+          name: "Classic Cheeseburger",
+          description: "Juicy beef burger with cheese and veggies.",
+          imageUrl:
+            "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?q=80&w=1899&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          category: "burger",
+        },
+        {
+          name: "Nigiri Sushi",
+          description: "Fresh and tasty sushi rolls with wasabi and soy sauce.",
+          imageUrl:
+            "https://cdn.tgdd.vn/Files/2021/09/09/1381375/huong-dan-cach-lam-nigiri-sushi-noi-tieng-cua-nhat-ban-202109091522036328.jpg",
+          category: "sushi",
+        },
+        {
+          name: "BBQ Burger",
+          description: "Juicy beef burger with cheese and veggies.",
+          imageUrl:
+            "https://images.unsplash.com/photo-1534790566855-4cb788d389ec?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          category: "burger",
+        },
+        {
+          name: "Margherita Pizza",
+          description:
+            "Delicious pizza with various toppings. Lorem ipsum dolor sit,  ",
+          imageUrl:
+            "https://worldlytreat.com/wp-content/uploads/2021/05/Italian-pepperoni-pizza-recipe-060-scaled.jpg",
+          category: "pizza",
+        },
+      ];
+
+      const navbar = document.getElementById("navbar");
+      const sticky = navbar.offsetTop;
+
+      const menuList = document.querySelector(".menu-list");
+      const categoryItems = document.querySelectorAll(".category-item");
+
+      categoryItems.forEach((item) =>
+        item.addEventListener("click", function () {
+          categoryItems.forEach((item) => item.classList.remove("selected"));
+          item.classList.add("selected");
+          renderFoodCard(item.textContent);
+        })
+      );
+
+      function renderFoodCard(category) {
+        menuList.innerHTML = "";
+
+        const filteredFoodItems = foodItems.filter((food) =>
+          category === "all" ? true : food.category === category
+        );
+
+        filteredFoodItems.forEach((food) => {
+          const template = `
+                          <div class="col-md-4 mb-4">
+                            <div class="card">
+                              <img src="${food.imageUrl}" class="card-img-top" alt="${food.name}" style="height: 150px; object-fit: cover">
+                              <div class="card-body">
+                                <h5 class="card-title">${food.name}</h5>
+                                <p class="card-text">${food.description}</p>
+                                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#orderFoodModal">
+                                    Order Food
+                                </button>
+                              </div>
+                            </div>
+                          </div>`;
+
+          menuList.insertAdjacentHTML("beforeend", template);
+        });
+      }
+      renderFoodCard("all");
+
+      function stickyNavbar() {
+        if (window.pageYOffset >= sticky) {
+          navbar.classList.add("sticky");
+        } else {
+          navbar.classList.remove("sticky");
+        }
+      }
+
+      window.onscroll = function () {
+        stickyNavbar();
+      };
+    </script>
+
+    <!-- LINK JS -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+      integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
